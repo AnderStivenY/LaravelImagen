@@ -1,6 +1,5 @@
-DROP DATABASE IF EXISTS laravel_imagen;
-CREATE DATABASE laravel_imagen;
-DROP TABLE laravel_imagen.users,
+CREATE DATABASE IF NOT EXISTS laravel_imagen;
+DROP TABLE IF EXISTS laravel_imagen.users;
 CREATE TABLE laravel_imagen.users(
     id BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
     names varchar(50),

@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             'names' => $faker -> name,
             'lastnames' => $faker -> lastName,
             'email' => $faker -> unique()-> email,
-            'profile_picture' => $faker -> image(__DIR__, 200, 200,null,true,true,$faker-> firstName.'.png'),
+            'profile_picture' => $faker -> imageUrl(200,200),
             'gender' => $faker -> randomElement(['Male', 'Female']),
             'birth_date' => $faker -> dateTime
         ]);}

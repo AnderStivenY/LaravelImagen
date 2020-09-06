@@ -35,7 +35,8 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $users =Users::create($request -> all());
+        return $users;
     }
 
     /**
@@ -44,9 +45,9 @@ class UsersController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show(Users $users)
+    public function show($id)
     {
-        //
+        return Users::find($id);
     }
 
     /**
@@ -67,9 +68,12 @@ class UsersController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Users $users)
+    public function update(Request $request, $id)
     {
-        //
+        $message = new Users();
+        $message-> message="Se Actualizo";
+        $message->object=Users::find($id);
+        return $message;
     }
 
     /**
@@ -78,8 +82,12 @@ class UsersController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Users $users)
+    public function destroy($id)
     {
-        //
+        $message = new Users();
+        $message-> message="Se elimina este usuario";
+        $message->object=Users::find($id);
+        $user = Users::find($id)->delete();
+        return $message;
     }
 }

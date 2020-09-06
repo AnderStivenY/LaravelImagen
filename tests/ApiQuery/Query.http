@@ -1,0 +1,29 @@
+# Obtener todos los registros con un máximode 10 resultados por página. (paginacion)
+GET http://localhost:8000/api/v1/users/?page=1&per_page=10 HTTP/1.1
+###
+# Obtener los datos de un usuario en concreto por ID.
+GET http://localhost:8000/api/v1/users/51 HTTP/1.1
+###
+# Crear un nuevo usuario.
+POST http://localhost:8000/api/v1/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "names": "Otto",
+    "lastnames": "Vandervort",
+    "email": "ottokes@yahoo.com",
+    "profile_picture": "https:\/\/lorempixel.com\/200\/200\/?98925",
+    "gender": "Male",
+    "birth_date": "2010-07-01"
+}
+###
+# Actualizar un usuario.
+PUT http://localhost:8000/api/v1/users/51 HTTP/1.1
+Content-Type: application/json
+
+{
+    "profile_picture": "logo.jpg",
+}
+###
+# Eliminar un usuario.
+DELETE http://localhost:8000/api/v1/users/49 HTTP/1.1
